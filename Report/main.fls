@@ -402,6 +402,12 @@ INPUT ./images/9.png
 INPUT images/9.png
 INPUT ./images/9.png
 INPUT ./images/9.png
+INPUT /home/dio/.texlive2022/texmf-var/fonts/tfm/lh/lh-t2a/larm1095.tfm
+INPUT ./images/10.png
+INPUT ./images/10.png
+INPUT images/10.png
+INPUT ./images/10.png
+INPUT ./images/10.png
 INPUT main.aux
 INPUT /usr/share/texlive/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t2a.enc
 INPUT /usr/share/texlive/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc
@@ -417,5 +423,6 @@ INPUT /usr/share/texlive/texmf-dist/fonts/type1/public/cm-super/sfbx1200.pfb
 INPUT /usr/share/texlive/texmf-dist/fonts/type1/public/cm-super/sfbx1440.pfb
 INPUT /usr/share/texlive/texmf-dist/fonts/type1/public/cm-super/sfbx1728.pfb
 INPUT /usr/share/texlive/texmf-dist/fonts/type1/public/cm-super/sfrm0800.pfb
+INPUT /usr/share/texlive/texmf-dist/fonts/type1/public/cm-super/sfrm1095.pfb
 INPUT /usr/share/texlive/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb
 INPUT /usr/share/texlive/texmf-dist/fonts/type1/public/cm-super/sfrm2488.pfb

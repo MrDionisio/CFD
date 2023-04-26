@@ -18,17 +18,17 @@ program Mesh1
 
     print*, 'h', h, 'V', V, 'Time', Time,'A', A, 'N', Ny, IScheme
 
-    dy=h/Ny 
+    dy=h/(Ny-1) 
     dt=dy**2/2/V
     Nt=INT(Time/dt) 
 
     print*, 'dy', dy, 'dt', dt, 'Nt' ,Nt
 
     Y(1)=0.0
-    DO I=2, Ny-1
+    DO I=2, Ny
         Y(I)=Y(I-1)+dy
     END DO
-    Y(Ny)=h
+
 
     UN=0.0
     
@@ -40,10 +40,6 @@ program Mesh1
         call Boundary(UN, Ny) 
         UN=UN_1
         t=t+dt
-    end do
-
-    do k=1,Ny
-        UN_1(k)=A/2/V*((h/2)**2-(Y(k)-h/2)**2)
     end do
 
     IO=1
@@ -88,8 +84,9 @@ end subroutine
 SUBROUTINE Output(IO, X, U, NX)
     IMPLICIT NONE
     integer IO, NX, I
-    real, dimension(0:NX+1) :: X, U 
+    real, dimension(NX) :: X
+    real, dimension(0:NX+1) :: U 
     DO i=1,NX
-          WRITE(IO, *) X(i-1), U(i)
+          WRITE(IO, *) X(i), U(i)
     END DO
 END SUBROUTINE
