@@ -1,6 +1,6 @@
 0.01    | h
 1.e-6     | V
-10000        | Time
-1         | A
+100        | Time
+0.3         | A
 101    | Ny
-17      | IScheme
+1      | IScheme

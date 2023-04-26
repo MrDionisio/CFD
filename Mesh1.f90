@@ -31,8 +31,8 @@ program Mesh1
 
 
     UN=0.0
-    
-    
+
+
     t=0.0
     UN_1=UN 
     do k=1,Nt

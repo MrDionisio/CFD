@@ -177,6 +177,23 @@ $\nu, [\text{м}^2/\text{с}]$ - коэффициент кинематическ
 \label{eq:9}
 \end{equation}
 
+Рассмотрим случай $\Delta t = \frac{\Delta y^2}{6\nu}$ повышающий аппроксимацию. Порядок точности будем определять по максимальному значению скорости вычисленному с помощью численных методов и аналитически.  (Таблица. \ref{tab:1})
+
+% Please add the following required packages to your document preamble:
+% \usepackage{graphicx}
+\begin{table}[H]
+    \centering
+    \resizebox{0.35\textwidth}{!}{%
+    \begin{tabular}{|c|c|c|c|}
+    \hline
+         & Теор.   & $\Delta t = \frac{\Delta y^2}{6\nu}$      & $\Delta t = \frac{\Delta y^2}{2\nu}$      \\ \hline
+    $V_{max}$ & 3.75000 & 3.74963 & 3.74918 \\ \hline
+    \end{tabular}%
+    }
+\caption{Сравнение точности повышающего порядок аппроксимации схемы.}
+\label{tab:1}
+\end{table}
+
 \section{Код программы.}
 Код программы представлен в удаленном репозитории на GitHub \\ (https://github.com/MrDionisio/CFD)
 
