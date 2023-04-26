@@ -1,8 +1,8 @@
-PWD /home/dio/Studiyng/Lessons/CFD/Task1/Report
+PWD /home/dio/Studiyng/Lessons/CFD/Assigment/Report
 INPUT /usr/share/texlive/texmf-dist/web2c/texmf.cnf
 INPUT /usr/share/texlive/texmf-dist/web2c/texmf.cnf
 INPUT /usr/share/texlive/texmf-var/web2c/pdftex/pdflatex.fmt
-INPUT /home/dio/Studiyng/Lessons/CFD/Task1/Report/main.tex
+INPUT /home/dio/Studiyng/Lessons/CFD/Assigment/Report/main.tex
 OUTPUT main.log
 INPUT /usr/share/texlive/texmf-dist/tex/latex/base/article.cls
 INPUT /usr/share/texlive/texmf-dist/tex/latex/base/article.cls

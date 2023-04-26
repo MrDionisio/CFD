@@ -6,4 +6,5 @@
 \contentsline {section}{\numberline {3}Реализация численного метода.}{5}{}%
 \contentsline {section}{\numberline {4}Реализуемый вариант расчетов.}{6}{}%
 \contentsline {section}{\numberline {5}Результаты расчетов.}{6}{}%
-\contentsline {section}{\numberline {6}Вывод.}{9}{}%
+\contentsline {section}{\numberline {6}Код программы.}{9}{}%
+\contentsline {section}{\numberline {7}Вывод.}{9}{}%
