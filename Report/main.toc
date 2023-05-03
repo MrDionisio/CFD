@@ -1,5 +1,5 @@
 \babel@toc {russian}{}\relax 
-\contentsline {section}{\numberline {1}Постановка задачи.}{3}{}%
+\contentsline {section}{\numberline {1}Постановка задачи №1.}{3}{}%
 \contentsline {section}{\numberline {2}Описание используемых численных методов.}{3}{}%
 \contentsline {subsection}{\numberline {2.1}Явная центральная схема.}{4}{}%
 \contentsline {subsection}{\numberline {2.2}Явная центральная схема с компенсацией старшего слагаемого ошибки аппроксимации.}{4}{}%
@@ -8,3 +8,4 @@
 \contentsline {section}{\numberline {5}Результаты расчетов.}{6}{}%
 \contentsline {section}{\numberline {6}Код программы.}{9}{}%
 \contentsline {section}{\numberline {7}Вывод.}{9}{}%
+\contentsline {section}{\numberline {8}Постановка задачи №2.}{10}{}%

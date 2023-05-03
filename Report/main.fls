@@ -408,6 +408,7 @@ INPUT ./images/10.png
 INPUT images/10.png
 INPUT ./images/10.png
 INPUT ./images/10.png
+INPUT Task2.tex
 INPUT main.aux
 INPUT /usr/share/texlive/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t2a.enc
 INPUT /usr/share/texlive/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc

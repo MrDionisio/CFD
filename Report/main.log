@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2023.4.24)  26 APR 2023 21:45
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2023.4.24)  3 MAY 2023 21:58
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -546,17 +546,17 @@ File: images/10.png Graphic file (type png)
 <use images/10.png>
 Package pdftex.def Info: images/10.png  used on input line 168.
 (pdftex.def)             Requested size: 200.19054pt x 150.1394pt.
- [8 <./images/7.png> <./images/8.png>] [9 <./images/9.png> <./images/10.png>]) [10] (./main.aux) ) 
+ [8 <./images/7.png> <./images/8.png>] [9 <./images/9.png> <./images/10.png>]) (./Task2.tex) [10] (./main.aux) ) 
 Here is how much of TeX's memory you used:
- 6012 strings out of 476175
- 98505 string characters out of 5796294
+ 6015 strings out of 476175
+ 98530 string characters out of 5796294
  1858793 words of memory out of 6000000
  26236 multiletter control sequences out of 15000+600000
  524126 words of font info for 55 fonts, out of 8000000 for 9000
  1137 hyphenation exceptions out of 8191
  67i,11n,77p,820b,479s stack positions out of 10000i,1000n,20000p,200000b,200000s
 {/usr/share/texlive/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t2a.enc}{/usr/share/texlive/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/cm-super/sfbx1200.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/cm-super/sfbx1440.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/cm-super/sfbx1728.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/cm-super/sfrm0800.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/cm-super/sfrm1095.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/cm-super/sfrm2488.pfb>
-Output written on main.pdf (10 pages, 441691 bytes).
+Output written on main.pdf (10 pages, 445258 bytes).
 PDF statistics:
  138 PDF objects out of 1000 (max. 8388607)
  74 compressed objects within 1 object stream
