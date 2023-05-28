@@ -2,7 +2,7 @@ PROGRAM Convective
 Implicit none
 
 INTEGER, parameter:: IO = 12 ! input-output unit      
-INTEGER NX,NT,I,J,ID,m, ISCHEME, ITASK
+INTEGER NX,NT,I,J,ID,m, ISCHEME, ITASK, Burgers
 REAL,ALLOCATABLE :: U(:),UN(:),X(:),UN1(:)
 REAL L,h,CFL,dt,t,Time
 REAL C, C0, C1, pi, k,G,FE, beta
@@ -18,6 +18,7 @@ READ(IO,*) Time
 READ(IO,*) CFL
 READ(IO,*) ISCHEME
 READ(IO,*) ITASK
+READ(IO,*) Burgers
 CLOSE(IO)      
 
 ALLOCATE(U(0:NX+1),UN(0:NX+1),X(0:NX+1), UN1(0:NX+1))
@@ -31,7 +32,7 @@ NT = Time/dt
 beta=k*h
 G=sqrt((1-CFL*(1-cos(beta)))**2+(CFL*sin(beta))**2)
 FE=-atan((CFL*sin(beta))/(1-CFL*(1-cos(beta))))
-print*, G, FE
+print*, 'G=', G, 'FE=', FE
 
 WRITE(*,*) 'L=',L, 'h=', h, 'NX=', NX
 WRITE(*,*) 'CFL=', CFL, 'dt=', dt, 'Time=', Time, 'NT=', NT
@@ -45,9 +46,10 @@ U(:)=0.0
 UN(:)=0.0
 
 
-CALL InitValue(U, X, k, C, NX, ITASK)
+CALL InitValue(U, X, k, NX, ITASK)
 CALL BoundValue(U, NX)     
 
+if (Burgers==0) then
 !-------------------------  Solve equation ------------------
 if (ISCHEME==1) then
       t=0.0d0
@@ -55,12 +57,13 @@ if (ISCHEME==1) then
             DO I=1,NX
                   UN(I)=U(I)-dt/2/h*((C+abs(C))*(U(i)-U(i-1))+(C-abs(C))*(U(i+1)-U(i)))
             END DO
+            G=UN((NX+1)/2)/U((NX+1)/2)
             UN(1)=UN(NX)
             U=UN
             t=t+dt
             CALL BoundValue(U, NX)
       end do
-
+      print*, 'Gchisl=', G
 
 elseif (ISCHEME==8) then
 
@@ -74,11 +77,47 @@ elseif (ISCHEME==8) then
             do i=1,NX
                   UN1(i)=UN(i)-UN(i-1)+U(i-1)-2*dt/h*C*(UN(i)-UN(i-1))
             end do
+            G=UN1((NX+1)/2)/UN((NX+1)/2)
             U=UN
             UN=UN1
             CALL BoundValue(UN, NX)
             t=t+dt
       end do 
+      print*, 'Gchisl=', G
+end if
+elseif(Burgers==1) then
+      C=1
+      if (ISCHEME==1) then
+            t=0.0d0
+            DO J=1,NT
+                  DO I=1,NX
+                        UN(I)=U(I)-dt/2/h*((C+abs(C))*(U(i)**2/2-U(i-1)**2/2)+(C-abs(C))*(U(i+1)**2/2-U(i)**2/2))
+                  END DO
+                  UN(1)=UN(NX)
+                  U=UN
+                  t=t+dt
+                  CALL BoundValue(U, NX)
+            end do
+      
+      
+      elseif (ISCHEME==8) then
+      
+            DO I=1,NX
+                  UN(I)=U(I)-dt/2/h*((C+abs(C))*(U(i)**2/2-U(i-1)**2/2)+(C-abs(C))*(U(i+1)**2/2-U(i)**2/2))
+            END DO
+            UN(1)=UN(NX)
+            CALL BoundValue(UN, NX)
+            t=dt
+            do j=2,NT
+                  do i=1,NX
+                        UN1(i)=UN(i)-UN(i-1)+U(i-1)-2*dt/h*C*(UN(i)**2/2-UN(i-1)**2/2)
+                  end do
+                  U=UN
+                  UN=UN1
+                  CALL BoundValue(UN, NX)
+                  t=t+dt
+            end do 
+      end if
 end if
 
 OPEN(IO,FILE='Res.dat')
@@ -106,11 +145,11 @@ CLOSE(IO)
 END PROGRAM
 
 !----------------------- Set Initial Value -----------------           
-subroutine InitValue(U, X, k, C, N, ITASK)
+subroutine InitValue(U, X, k, N, ITASK)
 IMPLICIT NONE
 INTEGER :: i, N, ITASK
 REAL, DIMENSION(0:N+1) :: U, X
-REAL :: C, k
+REAL :: k
 
 if (ITASK==1) then
       do i=1,N
