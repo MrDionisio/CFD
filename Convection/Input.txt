@@ -2,11 +2,11 @@
 2    	! m   sin(m*pi/L*x)
 0.75 	! C: du/dt+C*du/dx=0
 0.0 1.0 ! C0 C1: C0+C1*sin(m*pi/L*x)
-101   	! NX
+501   	! NX
 15	! Time
 0.5 	! CFL
 8 	! ISCHEME: 1 - upwind scheme
-1    | ITASK
+9    | ITASK
 0 | Burgers
 
 

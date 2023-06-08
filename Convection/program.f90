@@ -57,13 +57,11 @@ if (ISCHEME==1) then
             DO I=1,NX
                   UN(I)=U(I)-dt/2/h*((C+abs(C))*(U(i)-U(i-1))+(C-abs(C))*(U(i+1)-U(i)))
             END DO
-            G=UN((NX+1)/2)/U((NX+1)/2)
             UN(1)=UN(NX)
             U=UN
             t=t+dt
             CALL BoundValue(U, NX)
       end do
-      print*, 'Gchisl=', G
 
 elseif (ISCHEME==8) then
 
@@ -77,13 +75,11 @@ elseif (ISCHEME==8) then
             do i=1,NX
                   UN1(i)=UN(i)-UN(i-1)+U(i-1)-2*dt/h*C*(UN(i)-UN(i-1))
             end do
-            G=UN1((NX+1)/2)/UN((NX+1)/2)
             U=UN
             UN=UN1
             CALL BoundValue(UN, NX)
             t=t+dt
       end do 
-      print*, 'Gchisl=', G
 end if
 elseif(Burgers==1) then
       C=1
@@ -140,6 +136,19 @@ CLOSE(IO)
 
 OPEN(IO,FILE='Resan.dat')
 call Output(X, UN1, NX, IO)
+CLOSE(IO)
+
+OPEN(IO, FILE='DissipativeForce.dat')
+beta=0
+CFL=0
+do i=1,101
+      CFL=(i-1)*0.01
+      do j=1,101
+      beta=(j-1)*0.03
+      G=sqrt((1-CFL*(1-cos(beta)))**2+(CFL*sin(beta))**2)
+      write(IO,*) CFL, beta, G
+      end do
+end do
 CLOSE(IO)
 
 END PROGRAM
