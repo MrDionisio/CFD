@@ -28,7 +28,6 @@ k = m*pi/L
 h = 1./REAL(NX-1) 
 dt = h*CFL/C  
 NT = Time/dt
-
 beta=k*h
 G=sqrt((1-CFL*(1-cos(beta)))**2+(CFL*sin(beta))**2)
 FE=-atan((CFL*sin(beta))/(1-CFL*(1-cos(beta))))

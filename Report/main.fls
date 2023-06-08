@@ -1,7 +1,7 @@
 PWD /home/dio/Studiyng/Lessons/CFD/Assigment/Report
 INPUT /usr/share/texlive/texmf-dist/web2c/texmf.cnf
 INPUT /usr/share/texlive/texmf-dist/web2c/texmf.cnf
-INPUT /usr/share/texlive/texmf-var/web2c/pdftex/pdflatex.fmt
+INPUT /var/lib/texmf/web2c/pdftex/pdflatex.fmt
 INPUT /home/dio/Studiyng/Lessons/CFD/Assigment/Report/main.tex
 OUTPUT main.log
 INPUT /usr/share/texlive/texmf-dist/tex/latex/base/article.cls
@@ -343,7 +343,7 @@ INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmex10.tfm
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex8.tfm
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm
 OUTPUT main.pdf
-INPUT /usr/share/texlive/texmf-var/fonts/map/pdftex/updmap/pdftex.map
+INPUT /var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map
 INPUT /home/dio/.texlive2022/texmf-var/fonts/tfm/lh/lh-t2a/larm1728.tfm
 INPUT /home/dio/.texlive2022/texmf-var/fonts/tfm/lh/lh-t2a/labx1728.tfm
 INPUT ./main.toc
@@ -438,6 +438,16 @@ INPUT ./images/22.png
 INPUT images/22.png
 INPUT ./images/22.png
 INPUT ./images/22.png
+INPUT ./images/31.png
+INPUT ./images/31.png
+INPUT images/31.png
+INPUT ./images/31.png
+INPUT ./images/31.png
+INPUT ./images/32.png
+INPUT ./images/32.png
+INPUT images/32.png
+INPUT ./images/32.png
+INPUT ./images/32.png
 INPUT Task2.tex
 INPUT main.aux
 INPUT /usr/share/texlive/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t2a.enc
