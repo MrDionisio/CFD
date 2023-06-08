@@ -2,7 +2,7 @@ program Mesh1
     implicit none
     integer i, Ny, Nt, IScheme, IO, k
     real, ALLOCATABLE :: UN(:), UN_1(:), Y(:)
-    real :: h, V, A, dt, t, Time, dy
+    real :: h, V, A, dt, t, Time, dy, VNM
 
     allocate(UN(0:Ny+1), UN_1(0:Ny+1), Y(Ny))
 
@@ -20,9 +20,10 @@ program Mesh1
 
     dy=h/(Ny-1) 
     dt=dy**2/2/V
-    Nt=INT(Time/dt) 
+    Nt=INT(Time/dt)
+    VNM = V*dt/dy**2
 
-    print*, 'dy', dy, 'dt', dt, 'Nt' ,Nt
+    print*, 'dy', dy, 'dt', dt, 'Nt' ,Nt, 'VNM', VNM
 
     Y(1)=0.0
     DO I=2, Ny
