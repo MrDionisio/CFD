@@ -19,4 +19,4 @@
 \contentsline {subsection}{\numberline {3.1}Постановка задачи.}{16}{}%
 \contentsline {subsection}{\numberline {3.2}Анализ результатов.}{16}{}%
 \contentsline {section}{\numberline {4}Вывод по задачам №2 и №3.}{17}{}%
-\contentsline {section}{\numberline {5}Код программ.}{17}{}%
+\contentsline {section}{\numberline {5}Код программ.}{18}{}%

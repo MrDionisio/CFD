@@ -86,7 +86,11 @@ elseif(Burgers==1) then
             t=0.0d0
             DO J=1,NT
                   DO I=1,NX
-                        UN(I)=U(I)-dt/2/h*((C+abs(C))*(U(i)**2/2-U(i-1)**2/2)+(C-abs(C))*(U(i+1)**2/2-U(i)**2/2))
+                        if (U(I)>0) then
+                              UN(I)=U(I)-dt/2/h*(U(i)**2/2-U(i-1)**2/2)
+                        else 
+                              UN(I)=U(I)-dt/2/h*(U(i+1)**2/2-U(i)**2/2)
+                        endif
                   END DO
                   UN(1)=UN(NX)
                   U=UN
@@ -105,7 +109,11 @@ elseif(Burgers==1) then
             t=dt
             do j=2,NT
                   do i=1,NX
-                        UN1(i)=UN(i)-UN(i-1)+U(i-1)-2*dt/h*C*(UN(i)**2/2-UN(i-1)**2/2)
+                        if (U(I)>0) then
+                              UN1(i)=UN(i)-UN(i-1)+U(i-1)-2*dt/h*C*(UN(i)**2/2-UN(i-1)**2/2)
+                        else 
+                              UN1(i)=UN(i)-UN(i+1)+U(i+1)-2*dt/h*C*(UN(i+1)**2/2-UN(i)**2/2)
+                        endif
                   end do
                   U=UN
                   UN=UN1
